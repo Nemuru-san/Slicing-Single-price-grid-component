@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&display=swap');
+:root {
+    --LightGray: hsl(204, 43%, 93%);
+    --GrayishBlue: hsl(218, 22%, 67%);
+    --Cyan1: hsl(179, 62%, 43%);
+    --Cyan2: hsl(179, 60%, 50%);
+    --BrightYellow: hsl(71, 73%, 54%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: var(--LightGray);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    border-radius: 7px;
+    overflow: hidden;
+    background-color: white;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "up up""left right";
+    margin: 2rem 1rem;
+}
+
+.grid-up {
+    grid-area: up;
+}
+
+.grid-left {
+    grid-area: left;
+    background-color: var(--Cyan1);
+}
+
+.grid-right {
+    grid-area: right;
+    background-color: var(--Cyan2);
+}
+
+.up-content {
+    padding: 50px;
+}
+
+.up-content h3 {
+    color: var(--Cyan1);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.up-content span {
+    color: var(--BrightYellow);
+    font-size: 1.2rem;
+}
+
+.up-content p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: var(--GrayishBlue);
+    line-height: 1.4;
+}
+
+.grid-left {
+    padding: 50px;
+    color: white;
+}
+
+.grid-left h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.grid-left .price span {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.grid-left .price {
+    color: white;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.grid-left p {
+    color: white;
+}
+
+.grid-left a {
+    margin-top: 10px;
+    padding: 10px 0;
+    display: block;
+    background-color: var(--BrightYellow);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 1px rgb(226, 255, 158);
+}
+
+.grid-right {
+    padding: 50px;
+    color: white;
+}
+
+.grid-right h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.grid-right ul {
+    list-style: none;
+}
+
+.grid-right ul li {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 100%;
+        grid-template-areas: "up""left""right";
+    }
+    .up-content,
+    .grid-left,
+    .grid-right {
+        padding: 30px;
+    }
+}
